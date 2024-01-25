@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  backend:
+    build: .
+    environment:
+      NODE_ENV: development
+      DEBUG: nodejs-docker-express:*
+    ports:
+      - "2527:80"
+    restart: always  

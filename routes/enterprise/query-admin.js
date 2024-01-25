@@ -19,7 +19,7 @@ async function insertEnterprise(body) {
 }
 
 async function getEnterprisesLazyLoading(startIndex, numRows, globalFilter, sortField, sortOrder, startDate, endDate, status, department, ) {
-    let query = `SELECT e.*, r.nombre as "rubro", COALESCE(ev.estado, '0') as "evaluado"
+    let query = `SELECT e.*, r.nombre as "rubro", d.nombre as "departamento", COALESCE(ev.estado, '0') as "evaluado"
     FROM empresas e
     LEFT JOIN rubros r ON e.id_rubro = r.id
     LEFT JOIN departamento d ON e.id_dep = d.id
